@@ -1,0 +1,19 @@
+apt install gcc
+apt install git
+apt install perl
+apt install lzma
+apt install liblzma-dev
+apt install john
+wget https://www.cpan.org/modules/by-module/Compress/Compress-Raw-Lzma-2.074.tar.gz
+tar -zxf Compress-Raw-Lzma-2.074.tar.gz
+cd Compress-Raw-Lzma-2.074
+make
+make test 
+make install
+git clone https://github.com/magnumripper/JohnTheRipper.git
+cd JohnTheRipper
+./7z2john.pl ARCHIVE.7z > file.hash
+john file.hash
+
+
+video reference : https://www.youtube.com/watch?v=XMTkGNSycg0

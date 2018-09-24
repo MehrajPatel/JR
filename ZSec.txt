@@ -45,8 +45,11 @@ pip install pynput  //required for monitor mouse and keyboards strikes
 pyinstaller // to create executatble of python files
 UPX // to hive python executatble from anti virus
 
-
+##Tools##
 vega // to scann websites for vulnerability
 hydra //
-
+MBSA Nmap Nessus Fing  Superscan  OpenVAS  //network scanners
+pfSense Smoothwall and Vyos // software routers
+Wincap NST Netminer and NetWorx //network monitoring
+lxquick startpage disconnectsearch yacy
 

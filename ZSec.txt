@@ -50,4 +50,3 @@ vega // to scann websites for vulnerability
 hydra //
 
 
-https://t.me/joinchat/AAAAAEHIVfpeXVuGPHqfTQ

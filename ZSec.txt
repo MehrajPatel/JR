@@ -52,4 +52,14 @@ MBSA Nmap Nessus Fing  Superscan  OpenVAS  //network scanners
 pfSense Smoothwall and Vyos // software routers
 Wincap NST Netminer and NetWorx //network monitoring
 lxquick startpage disconnectsearch yacy
-
+ublock umatrix disconnect.me ghostery 'privacy badger' 'NoSecurity Security Suite' policeman// firefox plugins to prevent tracking
+virustotal.com trackoff.com  //url scanners for viruses
+veracrypt //HDD valume encrypter (OS hider)
+samy.pl // coockies cleaner
+ipleak.net browserleaks.com (knowledge based)//get browser fingerprinting
+random_agent_spoofer  CanvasBlocker// FFX extention to change browser fingerprinting
+js-recon
+ponopticlick.eff.org // to change browser fingerprint
+https everywhere
+ssl observaroty  //scan network connection for MITM
+certificate patrol  cipherbox perspective (ffx extention)//check and validate SSL certificates 

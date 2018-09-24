@@ -1,0 +1,131 @@
+Install and Open Ports 22,80,5055 for ec2 instance
+
+--------------------------------------------------
+
+
+enable super user mode
+
+======================
+
+sudo su
+
+
+Update repository
+
+==================
+
+apt-get update
+
+
+Install Java and MySQL server
+
+=============================
+
+apt-get install unzip default-jre mysql-server
+
+
+Create "traccar" database (use password of your choice)
+
+=======================
+
+echo "create database traccar" | mysql -u root -p
+
+
+Download Traccar package for Linux
+
+==================================
+
+wget https://github.com/traccar/traccar/releases/download/v3.16/traccar-linux-3.16.zip
+
+
+Un-zip package
+
+==============
+
+unzip traccar-linux-*.zip
+
+
+Install Traccar service
+
+=======================
+
+./traccar.run
+
+
+Create config file
+
+==================
+
+nano traccar.xml
+
+
+Example configuration (replace password with the one you created in last step)
+
+
+<?xml version='1.0' encoding='UTF-8'?>
+
+
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+
+
+<properties>
+
+
+    <entry key="config.default">./conf/default.xml</entry>
+
+
+    <entry key='web.port'>80</entry>
+
+
+    <entry key='geocoder.enable'>false</entry>
+
+
+    <entry key='database.driver'>com.mysql.jdbc.Driver</entry>
+
+    <entry key='database.url'>jdbc:mysql://localhost/traccar?allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
+
+    <entry key='database.user'>root</entry>
+
+    <entry key='database.password'>root</entry>
+
+   
+
+    <entry key='server.timeout'>120</entry>
+
+
+</properties>
+
+
+Replace default config file
+
+===========================
+
+cp traccar.xml /opt/traccar/conf/
+
+
+Remove installer
+
+================
+
+rm -f traccar.run README.txt traccar-linux-*.zip
+
+
+Configure cron job to clear old logs daily (optional step)
+
+==========================================================
+
+printf '#!/bin/sh\nfind /opt/traccar/logs/ -mtime +5 -type f -delete\n' > /etc/cron.daily/traccar-clear-logs && chmod +x /etc/cron.daily/traccar-clear-logs
+
+
+Start service
+
+=============
+
+/opt/traccar/bin/startDaemon.sh
+
+
+Check that service started correctly
+
+====================================
+
+tail -f /opt/traccar/logs/wrapper.log.*
